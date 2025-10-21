@@ -4,130 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Metodologías</title>
-    <link rel="stylesheet" href="style.css"> <!-- Enlaza tu CSS principal si quieres consistencia -->
-    <style>
-        /* Estilos específicos para el Comparador */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f0f8e6 0%, #e8f5d0 50%, #d4e8c0 100%);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(129, 193, 90, 0.2);
-            animation: fadeIn 1s ease-out;
-        }
-
-        h1 {
-            color: #4e832d;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .description {
-            color: #555;
-            font-size: 1.2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .selector-container {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .checkbox-group {
-            display: inline-block;
-            text-align: left;
-            margin-right: 20px;
-        }
-
-        .checkbox-group label {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-
-        .comparar-btn {
-            background: #81c15a;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.2rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .comparar-btn:hover {
-            background: #a1d069;
-        }
-
-        .tabla-container {
-            margin-top: 30px;
-            overflow-x: auto;
-        }
-
-        .tabla-comparativa {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .tabla-comparativa th, .tabla-comparativa td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tabla-comparativa th {
-            background: #81c15a;
-            color: white;
-            font-weight: 600;
-        }
-
-        .tabla-comparativa tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-
-        .tabla-comparativa tr:hover {
-            background: #f1f8e9;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Navegación básica para integración */
-        nav {
-            background: #4e832d;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
+    
 </head>
 <body>
       <nav class="sidebar">
@@ -138,7 +16,7 @@
             <li><a href="index.html"><img src="Imagenes/casa-silueta-negra-sin-puerta.png" alt="Inicio" class="menu-icon"> Inicio</a></li>
             <li><a href="Gestion.html"><img src="Imagenes/configuraciones.png" alt="Gestión" class="menu-icon"> Gestión de Calidad de software</a></li>
             <li><a href="Proceso.html"><img src="Imagenes/miniaturas.png" alt="Procesos" class="menu-icon"> Procesos de desarrollo de software</a></li>
-            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias En Detalle</a></li>
+            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias </a></li>
             <li><a href="recursos.html"><img src="Imagenes/recursos-humanos.png" alt="Recursos" class="menu-icon"> Recursos y aprendizaje</a></li>
             <li><a href="nosotros.html"><img src="Imagenes/grupo.png" alt="Nosotros" class="menu-icon"> Nosotros</a></li>
         </ul>
@@ -172,11 +50,11 @@
                         <th>Característica</th>
                         <th id="col-1"></th>
                         <th id="col-2"></th>
-                        <!-- Más columnas dinámicas -->
+                       
                     </tr>
                 </thead>
                 <tbody id="tabla-body">
-                    <!-- Filas generadas dinámicamente por JS -->
+                   
                 </tbody>
             </table>
         </div>

@@ -1,7 +1,4 @@
 
-/* ============================================
-   ESTILOS GENERALES Y RESET
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +15,7 @@ body {
     min-height: 100vh;
 }
 
-/* Logo en la esquina derecha */
+/* Logo de aprendiendo jugando */
 .logo {
     position: fixed;
     top: 20px;
@@ -50,7 +47,7 @@ body {
     color: #333;
 }
 
-/* Estilos para tarjetas originales en index.html */
+/* las 4 tarjetas del inicio*/
 .info-card {
     background: linear-gradient(135deg, #e8f5e8 0%, #f5f5dc 50%, #d4e3d4 100%);
     border: 3px solid #4caf50;
@@ -106,25 +103,21 @@ body {
     line-height: 1.6;
 }
 
-/* ============================================
-   BARRA LATERAL (SIDEBAR) - NAVEGACIÓN
-   ============================================ */
-
+/* menu */
 
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
-    width: 60px; /* Ancho solo para el ícono */
-    height: 60px; /* Altura solo para el ícono */
+    height: 60px;
     background: transparent;
-    z-index: 1002; /* Asegura que esté por encima del contenido */
-    overflow: visible; /* Permitir que el menú se expanda */
+    z-index: 1002; 
+    overflow: visible; 
     transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
 }
 
 .sidebar.open {
-    width: 250px; /* Ancho completo cuando está abierto */
+    width: 250px;
     height: 100vh;
     background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #f0ebe0 100%);
     box-shadow: 2px 0 10px rgba(139, 101, 63, 0.15);
@@ -158,7 +151,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Ocultar todo el contenido del menú por defecto */
+/* animacion que oculta la info del menu*/
 .menu {
     opacity: 0;
     visibility: hidden;
@@ -178,10 +171,10 @@ body {
     transition-delay: 0.1s;
 }
 
-/* Estilos para escritorio */
+
 @media (min-width: 769px) {
     .sidebar {
-        width: 60px; /* Ancho reducido por defecto */
+        width: 60px; 
     }
     
     .sidebar.open {
@@ -189,7 +182,7 @@ body {
     }
     
     .main-content {
-        margin-left: 60px; /* Ajustar según el ancho de la barra lateral */
+        margin-left: 60px;
         padding: 20px;
         transition: margin 0.3s ease;
         min-height: 100vh;
@@ -203,7 +196,6 @@ body {
     }
 }
 
-/* Estilos para móviles */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
@@ -358,9 +350,6 @@ body {
 }
 
 
-/* ============================================
-   BOTONES DROPDOWN - INTERACTIVOS
-   ============================================ */
 
 .process-container {
     display: grid;
@@ -371,6 +360,38 @@ body {
     margin: 0 auto;
     align-items: start;
 }
+/*  inicio, titulo e informacion */
+.main-content h1 {
+    color: #4e832d; 
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+
+.main-content h3 {
+    color: #666;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.main-content h4 {
+    color: #666;
+    margin: 0 auto 40px;
+    text-align: center;
+    max-width: 900px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+/* estilos y animacion de las tarjetas del inicio */
 
 .info-card {
     background: #ffffff;
@@ -406,7 +427,7 @@ body {
 
 .card-content {
     padding: 25px;
-    background-color: #81c15a; /* Color verde principal */
+    background-color: #81c15a; 
     color: #ffffff;
 }
 
@@ -419,7 +440,7 @@ body {
 
 .card-content p {
     margin: 0;
-    color: #f0f8e6; /* Verde muy claro para el texto */
+    color: #f0f8e6; 
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -433,43 +454,9 @@ body {
     margin: 40px auto;
 }
 
-/* ============================================
-   CONTENIDO PRINCIPAL - GENERAL
-   ============================================ */
 
-.main-content h1 {
-    color: #4e832d; /* Verde oscuro de la paleta */
-    margin: 20px 0;
-    text-align: center;
-    width: 100%;
-    font-size: 2.5rem;
-    font-weight: 600;
-    font-family: 'Playfair Display', serif;
-}
 
-.main-content h3 {
-    color: #666;
-    margin: 20px 0;
-    text-align: center;
-    width: 100%;
-    font-size: 1.8rem;
-    font-weight: 400;
-}
-
-.main-content h4 {
-    color: #666;
-    margin: 0 auto 40px;
-    text-align: center;
-    max-width: 900px;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    font-weight: 400;
-    padding: 0 20px;
-}
-
-/* ============================================
-   BARRA DE BÚSQUEDA
-   ============================================ */
+/* barra de busqueda  */
 
 .search-container {
     display: flex;
@@ -523,41 +510,15 @@ body {
     stroke-width: 2;
 }
 
-/* ============================================
-   SECCIÓN NOSOTROS
-   ============================================ */
+/* seccion-  recursos */
 
-.nosotros-section {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
+body.recursos-page .title-header-gestion {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/recursosyaprendizaje.webp') !important;
+      background-size: 60%; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
-
-.nosotros-link {
-    display: inline-block;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #81c15a 0%, #b2cf69 50%, #e2e287 100%);
-    color: #fff6ab;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(226, 226, 135, 0.5);
-    text-shadow: 0 0 15px rgba(255, 255, 204, 0.6);
-    border: 2px solid rgba(255, 246, 171, 0.4);
-}
-
-.nosotros-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 246, 171, 0.7);
-    background: linear-gradient(135deg, #b2cf69 0%, #e2e287 50%, #fff6ab 100%);
-    border-color: rgba(255, 255, 204, 0.7);
-}
-
-/* ============================================
-   SECCIÓN RECURSOS - GLOSARIO
-   ============================================ */
+/* glosario  */
 
 .glosario-container {
     width: 100%;
@@ -652,9 +613,7 @@ body {
     margin-bottom: 0;
 }
 
-/* ============================================
-   SECCIÓN RECURSOS - PREGUNTAS FRECUENTES (FAQ)
-   ============================================ */
+/* preguntas frecuentes*/
 
 .faq-container {
     width: 100%;
@@ -759,9 +718,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* ============================================
-   SECCIÓN RECURSOS - ENLACES DE INTERÉS
-   ============================================ */
+/* enlaces de interes*/
 
 .enlaces-container {
     width: 100%;
@@ -873,9 +830,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ============================================
-   SECCIÓN RECURSOS - EJERCICIOS Y CASOS PRÁCTICOS
-   ============================================ */
+/* los ejercicios y casos de practica  */
 
 .ejercicios-container {
     width: 100%;
@@ -1053,11 +1008,8 @@ body {
     line-height: 1.4;
 }
 
-/* ============================================
-   ESTILOS PARA SECCIONES DE SCRUM
-   ============================================ */
+/* aca asrranca metodologias en deatalle  */
 
-/* Contenedor principal para cada sección */
 .scrum-section-container {
     margin-bottom: 40px;
     padding: 20px;
@@ -1067,7 +1019,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Encabezado de sección con divisor */
 .section-header {
     margin-bottom: 25px;
     text-align: center;
@@ -1082,7 +1033,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Divisor visual */
+
 .section-divider {
     height: 3px;
     background: linear-gradient(90deg, transparent, #81c15a, transparent);
@@ -1091,7 +1042,6 @@ body {
     border-radius: 2px;
 }
 
-/* Espaciador entre secciones */
 .section-spacer {
     height: 30px;
     background: linear-gradient(180deg, transparent, rgba(129, 193, 90, 0.1), transparent);
@@ -1099,7 +1049,7 @@ body {
     border-radius: 15px;
 }
 
-/* Grids para cada tipo de contenido */
+/* recuadro para cada tipo de contenido */
 .roles-grid,
 .artefactos-grid,
 .events-grid {
@@ -1222,11 +1172,7 @@ body {
     font-weight: 600;
 }
 
-/* ============================================
-   DISEÑO DE TABLERO KANBAAN - NUEVO FORMATO
-   ============================================ */
-
-/* Contenedor principal de Kanban */
+/* kanban - metodologias*/
 .kanban-metodologia-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1236,7 +1182,6 @@ body {
     box-shadow: 0 5px 15px rgba(129, 193, 90, 0.2);
 }
 
-/* Header de Kanban */
 .kanban-header {
     text-align: center;
     margin-bottom: 25px;
@@ -1255,21 +1200,8 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* ============================================
-   ESTILOS ESPECÍFICOS PARA RECURSOS.HTML
-   ============================================ */
 
-/* Título específico para recursos con imagen personalizada */
-body.recursos-page .title-header-gestion {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/recursosyaprendizaje.webp') !important;
-      background-size: 60%; /* Aumenta el tamaño de la imagen al 150% para expandirla más */
-    background-position: center; /* Centra la imagen para enfocarla */
-    background-repeat: no-repeat; 
-}
-
-/* ============================================
-   ESTILOS PARA SECCIÓN DE PROCESO
-   ============================================ */
+/* seccion - proceso*/
 
 .intro-section {
     padding: 25px;
@@ -1285,10 +1217,10 @@ body.recursos-page .title-header-gestion {
 }
 
 .process-card {
-    background: #596900; /* Verde oscuro solicitado */
+    background: #596900;
     border-radius: 15px;
     padding: 25px;
-    border: 1px solid #7a8e00; /* Borde de un tono más claro */
+    border: 1px solid #7a8e00; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1300,21 +1232,51 @@ body.recursos-page .title-header-gestion {
 
 .process-card h2 {
     font-family: 'Playfair Display', serif;
-    color: #f0f0f0; /* Color de texto claro para contraste */
+    color: #f0f0f0; 
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
 .process-card p {
-    color: #e0e0e0; /* Color de texto claro para contraste */
+    color: #e0e0e0;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 10px;
 }
+/* botones de modelos de ciclo de vida */
+.info-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: center;
+    margin: 20px 0;
+}
+.info-button {
+    background: linear-gradient(145deg, #81c15a, #6ba047); 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px; 
+}
 
-/* ============================================
-   ESTILOS PARA SECCIÓN DE INFORMACIÓN ADICIONAL (PROCESO)
-   ============================================ */
+.info-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(129, 193, 90, 0.6);
+}
+
+.info-button:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 10px rgba(129, 193, 90, 0.4);
+}
+
+
+/* metedologias agiles - proceso */
 
 .metodologia-card {
     background: #ffffff;
@@ -1368,7 +1330,7 @@ body.recursos-page .title-header-gestion {
 }
 
 .info-button:active {
-    transform: scale(0.97); /* Animación al presionar */
+    transform: scale(0.97); 
     box-shadow: 0 2px 10px rgba(129, 193, 90, 0.4);
 }
 
@@ -1388,14 +1350,14 @@ body.recursos-page .title-header-gestion {
 }
 
 .info-text {
-    flex: 1; /* Ocupa el espacio restante */
-    order: 2; /* El texto se mostrará en segunda posición */
+    flex: 1; 
+    order: 2; 
 }
 
 .info-image {
-    flex-basis: 180px; /* Base de ancho para la imagen */
-    max-width: 180px; /* Ancho máximo fijo para la imagen */
-    order: 1; /* La imagen se mostrará en primera posición */
+    flex-basis: 180px;
+    max-width: 180px; 
+    order: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1408,19 +1370,17 @@ body.recursos-page .title-header-gestion {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividad para móviles */
+
 @media (max-width: 768px) {
     .info-content {
         flex-direction: column;
     }
 }
 
-/* ============================================
-   ESTILOS PARA LIGHTBOX (IMAGEN AMPLIADA)
-   ============================================ */
+/* imaganes de metodologias agiles */
 
 .info-image img {
-    cursor: pointer; /* Indica que la imagen es clickeable */
+    cursor: pointer; 
 }
 
 .lightbox-overlay {
@@ -1430,10 +1390,10 @@ body.recursos-page .title-header-gestion {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    display: none; /* Oculto por defecto */
+    display: none; 
     justify-content: center;
     align-items: center;
-    z-index: 2000; /* Asegura que esté por encima de todo */
+    z-index: 2000; 
     animation: fadeIn 0.3s ease;
 }
 
@@ -1494,43 +1454,38 @@ body.recursos-page .title-header-gestion {
     font-weight: bold;
     font-size: 1.2rem;
 }
-/* Estilos para el contenedor de botones */
-.info-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* Espacio entre botones para separación clara */
-    justify-content: center;
-    margin: 20px 0;
+
+/* aca arranca la seccion NOSOTROS  */
+
+.nosotros-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
 }
 
-/* Estilos para cada botón */
-.info-button {
-    background: linear-gradient(145deg, #81c15a, #6ba047); /* Degradado verde de la paleta */
-    color: white;
-    border: none;
+.nosotros-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #81c15a 0%, #b2cf69 50%, #e2e287 100%);
+    color: #fff6ab;
+    text-decoration: none;
     border-radius: 25px;
-    padding: 12px 20px;
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    min-width: 200px; /* Ancho mínimo para uniformidad */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(226, 226, 135, 0.5);
+    text-shadow: 0 0 15px rgba(255, 255, 204, 0.6);
+    border: 2px solid rgba(255, 246, 171, 0.4);
 }
 
-.info-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(129, 193, 90, 0.6);
+.nosotros-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 246, 171, 0.7);
+    background: linear-gradient(135deg, #b2cf69 0%, #e2e287 50%, #fff6ab 100%);
+    border-color: rgba(255, 255, 204, 0.7);
 }
 
-.info-button:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 10px rgba(129, 193, 90, 0.4);
-}
-
-/* ============================================
-   SECCIÓN DE EQUIPO - NUEVA
-   ============================================ */
+/* nosotros, equipo */
 
 .team-section {
     width: 100%;
@@ -1557,12 +1512,12 @@ body.recursos-page .title-header-gestion {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem; /* Aumenta la separación entre el título y los íconos */
+    gap: 3rem; 
     margin-bottom: 2rem;
 }
 
 .team-header h2 {
-    font-size: 3rem; /* Hace el título más grande */
+    font-size: 3rem; 
 }
 
 .social-icons {
@@ -1644,7 +1599,6 @@ body.recursos-page .title-header-gestion {
     text-align: justify;
 }
 
-/* Responsive para la sección de equipo */
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1676,11 +1630,11 @@ body.recursos-page .title-header-gestion {
     .team-header {
         flex-direction: column;
         align-items: center;
-        gap: 1rem; /* Menos separación en móviles para ahorrar espacio */
+        gap: 1rem; 
     }
 
     .team-header h2 {
-        font-size: 2.5rem; /* Título más pequeño pero aún grande en móviles */
+        font-size: 2.5rem; 
     }
 
     .social-icons {
@@ -1692,3 +1646,124 @@ body.recursos-page .title-header-gestion {
         height: 28px;
     }
 }
+/* secion adicional - Aprender Jugando /*
+
+/* Comparador y encuesta */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8e6 0%, #e8f5d0 50%, #d4e8c0 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(129, 193, 90, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            color: #4e832d;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .description {
+            color: #555;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .selector-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .checkbox-group {
+            display: inline-block;
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .checkbox-group label {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .comparar-btn {
+            background: #81c15a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .comparar-btn:hover {
+            background: #a1d069;
+        }
+
+        .tabla-container {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .tabla-comparativa {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabla-comparativa th, .tabla-comparativa td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla-comparativa th {
+            background: #81c15a;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tabla-comparativa tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .tabla-comparativa tr:hover {
+            background: #f1f8e9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        nav {
+            background: #4e832d;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
