@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de gestion de calidad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <a href="comparador.html"><span class="text">AprenderJugando.ar</span></a>
+    </div>
+   
+    <nav class="sidebar">
+        <div class="menu-toggle">
+            <img src="Imagenes/menu.png" alt="Menú">
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="Imagenes/casa-silueta-negra-sin-puerta.png" alt="Inicio" class="menu-icon"> Inicio</a></li>
+            <li><a href="Gestion.html"><img src="Imagenes/configuraciones.png" alt="Gestión" class="menu-icon"> Gestión de Calidad de software</a></li>
+            <li><a href="Proceso.html"><img src="Imagenes/miniaturas.png" alt="Procesos" class="menu-icon"> Procesos de desarrollo de software</a></li>
+            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias En Detalle</a></li>
+            <li><a href="recursos.html"><img src="Imagenes/recursos-humanos.png" alt="Recursos" class="menu-icon"> Recursos y aprendizaje</a></li>
+            <li><a href="nosotros.html"><img src="Imagenes/grupo.png" alt="Nosotros" class="menu-icon"> Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar..." class="search-input">
+                <button class="search-button">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <h1>SISTEMA DE GESTION DE CALIDAD</h1>
+        <h4>Dedicado a la educación y difusión de conocimientos fundamentales sobre la gestión de la calidad del software, los procesos de desarrollo (tanto tradicionales como ágiles) y las metodologías más relevantes en la industria. El objetivo principal es proporcionar un recurso accesible y comprensible para estudiantes, profesionales en formación y cualquier persona interesada en comprender cómo se construye software de calidad y cuáles son los enfoques metodológicos más utilizado.</h4>
+        
+        <div class="cards-container">
+            <a href="Gestion.html" class="info-card">
+                <div class="card-image-container">
+                    <img src="Imagenes/configuraciones.png" alt="Gestión de Calidad">
+                </div>
+                <div class="card-content">
+                    <h3>Gestión de Calidad</h3>
+                    <p>Herramientas y metodologías para garantizar la calidad en el desarrollo de software.</p>
+                </div>
+            </a>
+
+            <a href="Proceso.html" class="info-card">
+                <div class="card-image-container">
+                    <img src="Imagenes/miniaturas.png" alt="Procesos de Desarrollo">
+                </div>
+                <div class="card-content">
+                    <h3>Procesos de Desarrollo</h3>
+                    <p>Metodologías y procesos para el desarrollo eficiente de software.</p>
+                </div>
+            </a>
+
+            <a href="Metologias.html" class="info-card">
+                <div class="card-image-container">
+                    <img src="Imagenes/proceso.png" alt="Metodologías Ágiles">
+                </div>
+                <div class="card-content">
+                    <h3>Metodologías Ágiles</h3>
+                    <p>Enfoques flexibles y colaborativos para entregar valor rápidamente.</p>
+                </div>
+            </a>
+
+            <a href="recursos.html" class="info-card">
+                <div class="card-image-container">
+                    <img src="Imagenes/recursos-humanos.png" alt="Recursos y Aprendizaje">
+                </div>
+                <div class="card-content">
+                    <h3>Recursos y Aprendizaje</h3>
+                    <p>Glosario, guías y herramientas para expandir tu conocimiento.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(event.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
