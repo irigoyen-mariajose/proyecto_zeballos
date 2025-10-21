@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos de Desarrollo de Software</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="menu-toggle">
+            <img src="Imagenes/menu.png" alt="Menú">
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="Imagenes/casa-silueta-negra-sin-puerta.png" alt="Inicio" class="menu-icon"> Inicio</a></li>
+            <li><a href="Gestion.html"><img src="Imagenes/configuraciones.png" alt="Gestión" class="menu-icon"> Gestión de Calidad de software</a></li>
+            <li><a href="Proceso.html"><img src="Imagenes/miniaturas.png" alt="Procesos" class="menu-icon"> Procesos de desarrollo de software</a></li>
+            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias Agiles</a></li>
+            <li><a href="recursos.html"><img src="Imagenes/recursos-humanos.png" alt="Recursos" class="menu-icon"> Recursos y aprendizaje</a></li>
+            <li><a href="nosotros.html"><img src="Imagenes/grupo.png" alt="Nosotros" class="menu-icon"> Nosotros</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <h1>Ciclo de Vida del Desarrollo de Software</h1>
+        <div class="intro-section">
+            <p>El ciclo de vida del desarrollo de software se refiere a las etapas por las que pasa un software durante su desarrollo. Su objetivo es organizar y secuenciar estas etapas de manera controlada para minimizar fallas, evitar retrabajos y facilitar el seguimiento del proyecto. No todos los proyectos siguen el mismo ciclo; depende del modelo y contexto específico.</p>
+        </div>
+        <div class="process-container">
+            <div class="process-card">
+                <h2>Planificación</h2>
+                <p>Definir el proyecto, objetivos y recursos necesarios.</p>
+                <p>En esta etapa, se busca definir claramente el proyecto, sus objetivos, los recursos que se utilizarán y una planificación detallada. Esto incluye la identificación de riesgos, estimación de tiempos y costos, y la asignación de tareas para asegurar una base sólida antes de proceder.</p>
+            </div>
+            <div class="process-card">
+                <h2>Análisis de Requisitos</h2>
+                <p>Especificar requisitos funcionales y no funcionales del software.</p>
+                <p>En esta fase, se especifican detalladamente todos los requisitos del software, tanto funcionales (lo que el software debe hacer) como no funcionales (rendimiento, seguridad, usabilidad, etc.). Se recopilan necesidades del usuario y se documentan para guiar el desarrollo posterior.</p>
+            </div>
+            <div class="process-card">
+                <h2>Diseño</h2>
+                <p>Definir interfaces, arquitectura y diseño de cada parte del software.</p>
+                <p>Aquí se define la arquitectura general del software, las interfaces de usuario, la estructura de datos y los componentes. Se crean diagramas y especificaciones técnicas para visualizar cómo se organizará el sistema, asegurando que sea escalable y mantenible.</p>
+            </div>
+            <div class="process-card">
+                <h2>Implementación/Codificación</h2>
+                <p>Codificar algoritmos y estructuras de datos definidos anteriormente.</p>
+                <p>En esta etapa, se desarrolla una versión inicial del sistema mediante la codificación de algoritmos, funciones y estructuras de datos basadas en el diseño previo. Se utilizan lenguajes de programación y herramientas para transformar las especificaciones en código ejecutable.</p>
+            </div>
+            <div class="process-card">
+                <h2>Pruebas/Debugging</h2>
+                <p>Verificar errores y corregirlos mediante pruebas de testeo.</p>
+                <p>Se realizan pruebas exhaustivas para detectar y corregir errores, fallas o bugs en el software. Incluye pruebas unitarias, de integración y de sistema para asegurar que el código funcione correctamente y cumpla con los estándares de calidad.</p>
+            </div>
+            <div class="process-card">
+                <h2>Validación</h2>
+                <p>Verificar si se cumplen los requisitos iniciales del proyecto.</p>
+                <p>Esta fase verifica si el software desarrollado cumple con todos los requisitos expresados al inicio. Se realizan pruebas de aceptación y revisiones para confirmar que el producto final satisface las necesidades del usuario y los objetivos del proyecto.</p>
+            </div>
+            <div class="process-card">
+                <h2>Implementación</h2>
+                <p>Poner el software completamente disponible para el usuario.</p>
+                <p>El software se despliega en el entorno de producción, se configura y se pone a disposición de los usuarios finales. Incluye la instalación, capacitación y soporte inicial para asegurar una transición suave al uso real.</p>
+            </div>
+            <div class="process-card">
+                <h2>Mantenimiento</h2>
+                <p>Agregar funcionalidades y corregir errores surgidos o filtrados.</p>
+                <p>En esta etapa continua, se agregan nuevas funcionalidades, se corrigen errores que surjan post-implementación y se realizan mejoras basadas en retroalimentación. Asegura la evolución y longevidad del software a lo largo del tiempo.</p>
+            </div>
+        </div>
+        <div class="additional-info-section">
+            <h2>MODELOS DE CICLO DE VIDA</h2>
+            <p>Existen distintos tipos de modelos de ciclo de vida, los cuales se dividen en tres grandes visiones:</p>
+            <ul class="vision-list">
+                <li><strong>Alcance del ciclo de vida:</strong> depende de hasta que punto queremos llegar con el proyecto, dependiendo si se busca solo completarlo o ir actualizando y hacerle mantenimiento.</li>
+                <li><strong>Cualidad y cantidad de etapas:</strong> se dividirá el ciclo de vida dependiendo cual elijamos y del proyecto.</li>
+                <li><strong>Estructura y sucesión de etapas:</strong> en caso de que haya retroalimentación entre ellas y si existe tenemos libertad de repetirlas (iterar).</li>
+            </ul>
+            <div class="info-buttons">
+                <button class="info-button" onclick="toggleInfo('cascada')">Ciclo de Vida en Cascada</button>
+                <button class="info-button" onclick="toggleInfo('v')">Ciclo de Vida en V</button>
+                <button class="info-button" onclick="toggleInfo('iterativo')">Ciclo de Vida Iterativo</button>
+                <button class="info-button" onclick="toggleInfo('prototipos')">Ciclo de Vida por Prototipos</button>
+                <button class="info-button" onclick="toggleInfo('incremental')">Ciclo de Vida Incremental</button>
+            </div>
+            <div id="cascada" class="info-content" style="display: none;">
+                <div class="info-text">
+                    <h3>Ciclo de Vida en Cascada</h3>
+                    <p>Este modelo fue uno de los primeros modelos que sirvió como una base para los demás, fue propuesto por Winston Royce en 1970. Este ciclo de vida permite iteraciones. Es un modelo que se caracteriza por ser poco flexible y con muchas restricciones. Es ideal para proyectos donde se sabe de todos sus requerimientos y funcionalidades desde el principio. Además es muy teórico porque el cliente suele cambiar o agregar requerimientos entonces existe una amplia posibilidad de que se deba volver a etapas anteriores que se habían dado como finalizadas.</p>
+                    <p><strong>Ventajas:</strong> Planificación del tipo sencilla. Provee un producto con un elevado grado de calidad sin necesidad de un personal altamente calificado.</p>
+                    <p><strong>Desventajas:</strong> Poco flexible. Se requieren todos o la mayoría de los requerimientos claros desde el inicio del proyecto. Si se pasa de una etapa a la otra, es muy complicado volver atrás para corregir errores y muy costoso.</p>
+                    <p><strong>Cuándo utilizarlo:</strong> Proyectos donde se saben todos los requerimientos y funcionalidades desde el principio.</p>
+                </div>
+                <div class="info-image">
+                    <img src="Imagenes/cascada.jpg" alt="Diagrama del Ciclo de Vida en Cascada" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+            <div id="v" class="info-content" style="display: none;">
+                <div class="info-text">
+                    <h3>Ciclo de Vida en V</h3>
+                    <p>Este ciclo de vida fue diseñado por Alan Davis, está conformado por las mismas etapas que el ciclo de vida en cascada puro, solo con la diferencia de que a este se le agregar dos subetapas de retroalimentación entre las etapas de análisis y mantenimiento y entre las de diseño y debugging.</p>
+                    <p><strong>Ventajas:</strong> Controles cruzados entre etapas para lograr una mayor corrección, planificación sencilla. Provee un producto con un elevado grado de calidad sin necesidad de un personal altamente calificado.</p>
+                    <p><strong>Desventajas:</strong> Poco flexible, similar al cascada.</p>
+                    <p><strong>Cuándo utilizarlo:</strong> Proyectos con requisitos claros y necesidad de validación cruzada.</p>
+                </div>
+                <div class="info-image">
+                    <img src="Imagenes/enV.jpg" alt="Diagrama del Ciclo de Vida en V" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+            <div id="iterativo" class="info-content" style="display: none;">
+                <div class="info-text">
+                <h3>Ciclo de Vida Iterativo</h3>
+                <p>Es un modelo el cual deriva del ciclo de vida en cascada puro, pero con el objetivo de que busca reducir cualquier riesgo que pueda surgir entre las necesidades del usuario y la entrega final por posibles malos entendidos durante la etapa de requerimientos. Este ciclo es la iteración de varios ciclos en cascada, al final de cada uno; el cliente recibe una versión mejorada de la entrega anterior y evalúa si el producto es lo que está buscando, proponiendo mejoras o corrigiendo errores, esto se realiza hasta que quede conforme con el producto. Se utiliza en proyectos donde los requerimientos no son claros y es necesario crear prototipos para evaluar los requerimientos. Mayormente se adapta para proyectos de software medianos a grandes donde el usuario realmente no va a hacer uso de todas las funcionalidades que se quiere implementar.</p>
+                <p><strong>Ventajas:</strong> Reduce riesgos de malos entendidos; Adaptable a cambios.</p>
+                <p><strong>Desventajas:</strong> Puede requerir múltiples iteraciones, aumentando tiempo y costo.</p>
+                <p><strong>Cuándo utilizarlo:</strong> Proyectos donde los requerimientos no son claros y se necesitan prototipos para validación.</p>
+            </div>
+            <div class="info-image">
+                    <img src="Imagenes/iterativo2.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+            <div id="prototipos" class="info-content" style="display: none;">
+                <div class="info-text">
+                <h3>Ciclo de Vida por Prototipos</h3>
+                <p>Los prototipos se utilizan para poder validar los requerimientos del usuario en cualquier modelo de ciclo de vida. Este modelo se utiliza cuando no se sabe exactamente las especificaciones del producto, ya sea si este es provisorio o parcial. Su objetivo es lograr un producto intermedio antes de finalizarlo así se puede conocer las funcionalidades del producto final. Se utiliza para productos en desarrollo con innovaciones importantes o para nuevas tecnologías que no son muy conocidas.</p>
+                <p><strong>Ventajas:</strong> Apto para desarrollos donde no se conocen las prioridades ni las tecnologías que se utilizaran.</p>
+                <p><strong>Desventajas:</strong> Puede llegar a ser muy costoso y difícil de administrar temporalmente.</p>
+                <p><strong>Cuándo utilizarlo:</strong> Productos en desarrollo con innovaciones importantes o nuevas tecnologías no conocidas.</p>
+            </div>
+             <div class="info-image">
+                    <img src="Imagenes/prototipos.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)">
+                </div>
+                  </div>
+            <div id="incremental" class="info-content" style="display: none;">
+                <div class="info-text">
+                    <h3>Ciclo de Vida Incremental</h3>
+                    <p>Este modelo está basado en la filosofía de construir un software incrementando las funcionalidades del programa. Se lleva a cabo a través de módulos, los cuales van a cumplir distintas funciones del sistema a construir. De esta manera, se van aumentando las capacidades y funcionalidades del software gradualmente. También permite que todos los miembros del equipo desarrollen un módulo en particular (si se lleva a cabo por un equipo de programadores). Es muy similar en varios aspectos al modelo cascada, con la diferencia de que va en ciclos en cada funcionalidad a desarrollar. Cuando finaliza cada ciclo se le entrega dicho módulo se le entrega al cliente con sus nuevas funcionalidades.</p>
+                    <p><strong>Ventajas:</strong> Construir el sistema en pequeñas partes es menos riesgoso. Es más sencillo relevar los requerimientos del usuario. Si hay errores graves, solo se desecha la última iteración. No necesita de los requerimientos de todas las funcionalidades para empezar. Es un modelo el cual está más enfocado para determinados usuarios y clientes y no a determinadas aplicaciones o sistemas, sin embargo se puede utilizar para casi cualquier proyecto, más que nada si el usuario requiere de entregas rápidas.</p>
+                    <p><strong>Desventajas:</strong> Puede requerir entregas frecuentes, aumentando complejidad.</p>
+                    <p><strong>Cuándo utilizarlo:</strong> Proyectos donde el usuario requiere entregas rápidas y funcionalidades incrementales.</p>
+                </div>
+                <div class="info-image">
+                    <img src="Imagenes/incremental2.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-card">
+            <div class="content-title">
+                <h2>Metodologías Ágiles</h2>
+            </div>
+            <div class="content-body">
+                <p>Las metodologías ágiles son un modelo enfocado en la colaboración, adaptabilidad y entregas rápidas de valor. Se caracteriza por ciclos cortos de desarrollo, mucha interacción con el cliente y la flexibilidad para adaptarse a los cambios de requisitos y un software funcional sobre la documentación extensiva, y el diseño. Su filosofía se refleja en los valores y principios del Manifiesto Ágil, el cual afirma:</p>
+                <blockquote>
+                    <p>Estamos descubriendo mejores formas para desarrollar software, al hacerlo y al ayudar a otros a hacerlo. Gracias a este trabajo llegamos a valorar:</p>
+                    <ul>
+                        <li><strong>A los individuos y las interacciones</strong> sobre los procesos y las herramientas</li>
+                        <li><strong>Al software operativo</strong> sobre la documentación exhaustiva</li>
+                        <li><strong>La colaboración con el cliente</strong> sobre la negociación del contrato</li>
+                        <li><strong>La respuesta al cambio</strong> sobre el seguimiento de un plan</li>
+                    </ul>
+                    <p>Esto es, aunque exista valor en los objetos a la derecha, valoramos más los de la izquierda.</p>
+                </blockquote>
+                <p>Son métodos con un enfoque en el diseño rápido, liberaciones seguidas en la línea de tiempo, menos costoso y una producción de código rápida y de calidad. Cada método propone distintos procesos para lograr sus objetivos siguiendo la filosofía y los valores del Manifiesto Ágil. Es ideal para el desarrollo de sistemas donde una compañía de software quiere elaborar un producto pequeño o mediano y para el diseño de sistemas donde el cliente participa activamente en el proceso de desarrollo del sistema y donde no existen muchas reglas ni regulaciones externas que podrían afectar el software.</p>
+                <p>Acá podemos encontrar las metodologías Scrum, Kanban y Extreme Programming.</p>
+            </div>
+        </div>
+
+        <div class="metodologia-card">
+            <div class="content-title">
+                <h2>SCRUM</h2>
+            </div>
+            <div class="content-body">
+                <p>Scrum es un método de trabajo ágil, el cual funciona como un marco de trabajo para la administración de un proyecto. Su método está basado en Sprints, los cuales son periodos de entregas en incremento de manera fija. Su enfoque está en la administración iterativa del desarrollo y no en enfoques técnicos específicos de la ingeniería de software ágil.</p>
+                <div class="content-title"> <br>
+
+<div class="info-image" style="text-align: center; width: 80%; margin: 0 auto;">
+                    <img src="Imagenes/scrum2.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)" style="width: 100%; max-width: 600px; height: auto;">
+                </div>
+                    <h3>Fases en la metodología de Scrum:</h3>
+                </div>
+                <ul>
+                    <li><strong>Planificación del bosquejo:</strong> se establecen los objetivos del proyecto y diseño de su arquitectura.</li>
+                    <li><strong>Ciclos de Sprint:</strong> cada ciclo presenta un incremento del sistema.</li>
+                    <li><strong>Cierre del proyecto:</strong> se concluye el proyecto y se completa la documentación requerida.</li>
+                </ul>
+                
+                <p>Se caracteriza por su fase central muy innovadora, los ‘Sprints’ que son unidades donde se planea el trabajo que se quiere realizar y desarrollar para implementarlo al software. Estos periodos no tienen un tiempo fijo.</p>
+                <div class="content-title">
+                    <h3>Características de los Sprints:</h3>
+                </div>
+                <p>Su punto de partida para comenzar a planear es la lista de trabajo a realizar, con esto durante la valoración de cada sprint se revisa y se asignan las prioridades y los riesgos, además al principio de cada sprint el cliente participa introduciendo nuevos requerimientos, cambios o tareas.</p>
+                <p>Otra característica, es que durante la fase de selección se incluye a todo el equipo del proyecto que trabaja con el cliente para poder determinar qué funcionalidades y características se deben de tomar en cuenta durante el sprint. Luego el equipo se organiza para poder revisar el progreso y si llega a ser necesario, se asignan nuevas prioridades o pequeños encuentros diarios con todo el equipo. Aquí entra en juego el rol del “Scrum Master” el cual se encarga de administrar y es el centro de todas las comunicaciones entre el equipo, la organización y el cliente, esto quiere decir que todos deben comunicarse con él. Por último, al finalizar el sprint, se revisa y presenta todo el trabajo realizado por cada integrante del equipo para después poder seguir con el próximo sprint.</p>
+                <div class="content-title">
+                    <h3>Roles en Scrum:</h3>
+                </div>
+                <p>En el modelo de Scrum, cada miembro del equipo cumple un rol en específico, el cual se encarga de poder asegurar la responsabilidad y claridad de trabajo que hará cada integrante.</p>
+                <ul>
+                    <li><strong>Cliente/Usuario:</strong> es la persona que representa la entidad interesada, se encarga de poder definir y dar los requerimientos del software, también dará una retroalimentación de todos los cambios, mejoras y nuevas funcionalidades a implementar.</li>
+                    <li><strong>Scrum Master:</strong> persona encargada de ordenar reuniones diarias, incentiva la productividad para reducir atrasos, lleva un registro del progreso, además se comunica con los clientes y administradores que no forman parte directamente del equipo.</li>
+                    <li><strong>Programadores:</strong> son un grupo el cual se encarga de poder desarrollar y llevar a cabo el producto a construir, algunos se especializan en tareas en específico y son un equipo de autogestión ya que la responsabilidad recae sobre todos por igual.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="metodologia-card">
+            <div class="content-title">
+                <h2>KANBAN</h2>
+            </div>
+            <div class="content-body">
+                <p>Kanban es un método el cual ayuda a controlar la producción, a través de señales a lo largo de toda la producción que controlara el proceso de reabastecimiento y empieza con el conocimiento de los requerimientos del cliente hasta obtener el producto final.</p>
+                <p>Este sistema lo que busca es poder controlar las piezas o los componentes que se encargan en la cadena de producción sean desarrolladas en cantidades suficientes para poder reemplazar los que ya se hayan realizado, logrando una producción sin existencias. Esto se puede lograr a través de varios métodos como tarjetas, tableros, señales visuales o electrónicas y se seleccionara una dependiendo de las condiciones de la empresa y de las características del producto a desarrollar.</p>
+                <p>Las cadenas se conforman por una serie de centros de trabajo conectados entre sí por donde la información y los materiales van a circular de inicio a fin. Cada centro se conforma por equipos los cuales pueden ser máquinas u operarios que trabajan en paralelo.</p>
+                <div class="content-title">
+<div class="info-image" style="text-align: center; width: 80%; margin: 0 auto;">
+                    <img src="Imagenes/kanban.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)" style="width: 100%; max-width: 600px; height: auto;">
+                </div>
+                    <h3>Objetivos:</h3>
+                </div>
+                <ul>
+                    <li>Establecer una programación en la que se pueda visualizar la producción.</li>
+                    <li>Controlar el flujo de material.</li>
+                    <li>Impulsar el mantenimiento de los procesos estandarizados.</li>
+                    <li>Evitar la sobreproducción.</li>
+                    <li>Controlar los inventarios.</li>
+                    <li>Incrementar y mejorar la comunicación entre procesos y centros de trabajo.</li>
+                    <li>Minimizar el producto en proceso.</li>
+                </ul>
+                <p>Para poder implementar correctamente se debe formar a todo el equipo teniendo en cuenta la metodología, sus beneficios y ventajas. También se deben analizar los centros más conflictivos para detectar problemas desconocidos, no siempre es necesario implementarlo en todos los procesos de la cadena. Luego se implementa Kanban en todos los centros de trabajo, el operario va a ser quien representa la fuente de información más importante , aportando ideas y opiniones con el objetivo de mejorar el sistema. Por último, se realiza un mantenimiento y revisión continua.</p>
+                <p>En Kanban no se encuentran roles específicos como en otras metodologías, sino que cada miembro continua con sus roles habituales.</p>
+            </div>
+        </div>
+
+        <div class="metodologia-card">
+            <div class="content-title">
+                <h2>PROGRAMACION EXTREMA</h2>
+            </div>
+            <div class="content-body">
+                <p>Es el método ágil mejor conocido y más ampliamente utilizado. Fue nombrado por Beck en el año 2000 debido a que su enfoque lleva a medidas extremas las prácticas reconocidas, como el desarrollo iterativo.</p>
+                <p>Los requerimientos en este modelo se los llaman como escenarios o historias de usuario, las cuales se implementan como serie de tareas.</p>
+                <p>Antes de empezar a desarrollar el código. Los programadores desarrollan pruebas para cada tarea. Estas tareas deben de ser ejecutadas exitosamente cuando se integre en el sistema.</p>
+                <div class="content-title">
+<div class="info-image" style="text-align: center; width: 80%; margin: 0 auto;">
+                    <img src="Imagenes/xp.jpg" alt="Diagrama del Ciclo de Vida Incremental" onclick="openLightbox(this.src)" style="width: 100%; max-width: 600px; height: auto;">
+                </div>
+                    <h3>La XP incluye prácticas como:</h3>
+                </div>
+                <ul>
+                    <li>Desarrollo incremental en pequeñas liberaciones del sistema. Los requerimientos se presentan como historias de usuario o escenarios usados para decidir las funcionalidades que debe incluir cada incremento del sistema.</li>
+                    <li>Inclusión del cliente: se tiene en cuenta constantemente la retroalimentación del cliente en el equipo de desarrollo. El cliente participa durante cada paso y etapa del proyecto.</li>
+                    <li>La programación está basada en pares, en la propiedad colectiva del código del sistema y también en un proceso de desarrollo el cual sea sustentable sin incluir jornadas de trabajos muy extensas.</li>
+                    <li>Los cambios se aceptan a través de liberaciones regulares del sistema hacia los clientes, el desarrollo de la primera prueba, la refactorización así de esta manera se evita la degeneración del código y se integran nuevas funcionalidades.</li>
+                    <li>Simplicidad: se busca mantenerla a través de la refactorización continua así mejoramos la calidad del código y con el uso de diseños simples que puedan llegar a ser modificables en el futuro.</li>
+                </ul>
+                <p>Los clientes intervienen estrechamente en la especificaciones y las prioridades de los requerimientos del sistema, los cuales no se especifican como listas de actividades requeridas del sistema. En este caso, el cliente del sistema participa activamente en el equipo desarrollando en conjunto “tarjeta de historia” donde se registran las necesidades del cliente.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <img id="lightbox-image" src="" alt="Imagen ampliada">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function toggleInfo(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImage = document.getElementById('lightbox-image');
+
+        function openLightbox(src) {
+            lightboxImage.src = src;
+            lightboxOverlay.classList.add('show');
+        }
+
+        function closeLightbox() {
+            lightboxOverlay.classList.remove('show');
+        }
+
+        lightboxOverlay.addEventListener('click', closeLightbox);
+    </script>
+</body>
+</html>

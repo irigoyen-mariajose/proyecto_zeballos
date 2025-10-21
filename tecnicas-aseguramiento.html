@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas de Aseguramiento de Calidad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gestion.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="menu-toggle">
+            <img src="Imagenes/menu.png" alt="Menú">
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="Imagenes/casa-silueta-negra-sin-puerta.png" alt="Inicio" class="menu-icon"> Inicio</a></li>
+            <li><a href="Gestion.html"><img src="Imagenes/configuraciones.png" alt="Gestión" class="menu-icon"> Gestión de Calidad de software</a></li>
+            <li><a href="Proceso.html"><img src="Imagenes/miniaturas.png" alt="Procesos" class="menu-icon"> Procesos de desarrollo de software</a></li>
+            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias Agiles</a></li>
+            <li><a href="recursos.html"><img src="Imagenes/recursos-humanos.png" alt="Recursos" class="menu-icon"> Recursos y aprendizaje</a></li>
+            <li><a href="nosotros.html"><img src="Imagenes/grupo.png" alt="Nosotros" class="menu-icon"> Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="detail-page-container tecnicas-section">
+            <a href="Gestion.html" class="back-button">‹ Volver a Gestión</a>
+            <h1>Técnicas de Aseguramiento de Calidad</h1>
+            <p>Existen distintos conceptos que ayudan a comprender las técnicas de aseguramiento de la calidad, entre ellos la verificación y la validación.</p>
+            <ul>
+                <li><strong>Verificación:</strong> Son actividades que se centran en confirmar la correcta construcción de un producto de software, que se cumplan las especificaciones técnicas y no tenga errores de código, arquitectura o documentación.</li>
+                <li><strong>Validación:</strong> Son actividades que ayudan a asegurar si el producto que se está construyendo es el correcto; el cual se asegurará de que cumpla con los requisitos funcionales y no funcionales.</li>
+            </ul>
+            <p>Para poder asegurar la calidad de un software, se utilizan distintas técnicas que puedan garantizar los estándares definidos.</p>
+            
+            <h2>Tipos de Pruebas</h2>
+            <p>Los tipos de pruebas suelen ser:</p>
+            <ul>
+                <li><strong>Funcionales:</strong> Son pruebas que se encargan de verificar que el sistema funcione correctamente, o sea que cumpla su función. Por ejemplo: que el botón de ‘Login’ permita el acceso solo con los datos correctos.</li>
+                <li><strong>No funcionales:</strong> Son pruebas que se enfocan en medir el rendimiento del software, su seguridad y usabilidad. Por ejemplo, que la aplicación soporte determinada cantidad de usuarios conectados al mismo tiempo.</li>
+                <li><strong>Automatizadas:</strong> Son pruebas que ejecuta el mismo software, por lo tanto, se ejecutan mediante herramientas o scripts que simulan la interacción humana. Por ejemplo: Selenium, JUnit. Cypress.</li>
+                <li><strong>Manuales:</strong> Son pruebas que realizan evaluadores humanos, que verifican el funcionamiento siguiendo casos de pruebas.</li>
+            </ul>
+
+            <h2>Actividades de Verificación de Software</h2>
+            <p>Las actividades de verificación de software incluyen:</p>
+            <ul>
+                <li><strong>Unidad:</strong> Para componentes individuales, validan el correcto funcionamiento de componentes individuales.</li>
+                <li><strong>Integración:</strong> Para módulos combinados, con enfoque en la verificación de la interacción entre módulos o subsistemas.</li>
+                <li><strong>Sistema:</strong> Para la aplicación completa, por lo tanto válida el software en su conjunto.</li>
+                <li><strong>Aceptación:</strong> Válida la satisfacción del usuario.</li>
+            </ul>
+
+            <h2>Técnicas de Caja Negra y Caja Blanca</h2>
+            <p>Las técnicas que utiliza pueden incluir la caja negra y la caja blanca:</p>
+            <ul>
+                <li><strong>Pruebas de caja blanca:</strong> Están enfocadas en pruebas de programa, donde las pruebas se basan en el conocimiento de la estructura del programa y sus componentes. El acceso al código fuente es esencial para las pruebas de caja blanca.</li>
+                <li><strong>Pruebas de caja negra:</strong> Tienen enfoque en las pruebas donde los examinadores no tienen acceso al código fuente de un sistema o de sus componentes. Las pruebas se derivan de la especificación del sistema.</li>
+            </ul>
+
+            <h2>Aseguramiento de Calidad</h2>
+            <p>El aseguramiento de la Calidad de Software hace referencia al conjunto de procesos y actividades por el que pasa el producto, las cuales forman parte del ciclo de desarrollo que se diseñó para evaluar y mejorar la calidad de productos digitales.</p>
+            <p>El objetivo principal del aseguramiento de la calidad en el desarrollo de software es poder garantizar que los productos digitales funcionen de forma correcta independientemente del dispositivo o su sistema operativo utilizado por los usuarios, para esto se hace uso de varios procesos y técnicas centradas en mejorar el ciclo de desarrollo de software para poder evitar cualquier falla antes del lanzamiento del software.</p>
+            <p>Hay buenas técnicas de aseguramiento de calidad adicionales; como por ejemplo la integración continua para detectar errores rápidamente a través de pruebas automáticas frecuentes. También el desarrollo guiado por pruebas (TDD) que va a impulsar a escribir pruebas antes del código. Luego las revisiones de código para asegurar la calidad antes de la integración final.</p>
+            <img src="Imagenes/aseguramiento2.webp" alt="Aseguramiento de Calidad" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 10px;">
+        </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

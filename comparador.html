@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Metodologías</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlaza tu CSS principal si quieres consistencia -->
+    <style>
+        /* Estilos específicos para el Comparador */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8e6 0%, #e8f5d0 50%, #d4e8c0 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(129, 193, 90, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            color: #4e832d;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .description {
+            color: #555;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .selector-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .checkbox-group {
+            display: inline-block;
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .checkbox-group label {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .comparar-btn {
+            background: #81c15a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .comparar-btn:hover {
+            background: #a1d069;
+        }
+
+        .tabla-container {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .tabla-comparativa {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabla-comparativa th, .tabla-comparativa td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla-comparativa th {
+            background: #81c15a;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tabla-comparativa tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .tabla-comparativa tr:hover {
+            background: #f1f8e9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Navegación básica para integración */
+        nav {
+            background: #4e832d;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+      <nav class="sidebar">
+        <div class="menu-toggle">
+            <img src="Imagenes/menu.png" alt="Menú">
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="Imagenes/casa-silueta-negra-sin-puerta.png" alt="Inicio" class="menu-icon"> Inicio</a></li>
+            <li><a href="Gestion.html"><img src="Imagenes/configuraciones.png" alt="Gestión" class="menu-icon"> Gestión de Calidad de software</a></li>
+            <li><a href="Proceso.html"><img src="Imagenes/miniaturas.png" alt="Procesos" class="menu-icon"> Procesos de desarrollo de software</a></li>
+            <li><a href="Metologias.html"><img src="Imagenes/proceso.png" alt="Metodologías" class="menu-icon"> Metodologias En Detalle</a></li>
+            <li><a href="recursos.html"><img src="Imagenes/recursos-humanos.png" alt="Recursos" class="menu-icon"> Recursos y aprendizaje</a></li>
+            <li><a href="nosotros.html"><img src="Imagenes/grupo.png" alt="Nosotros" class="menu-icon"> Nosotros</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="container">
+        <h1>Comparador de Metodologías</h1>
+        <p class="description">Selecciona dos o más metodologías para comparar sus características clave. Usa los checkboxes y haz clic en "Comparar" para generar la tabla.</p>
+        
+        <div class="selector-container">
+            <label for="metodologias">Elige Metodologías:</label><br>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Modelo Cascada" class="metodologia-checkbox"> Modelo Cascada</label><br>
+                <label><input type="checkbox" value="Modelo Incremental" class="metodologia-checkbox"> Modelo Incremental</label><br>
+                <label><input type="checkbox" value="Modelo por Prototipos" class="metodologia-checkbox"> Modelo por Prototipos</label><br>
+                <label><input type="checkbox" value="Modelo Iterativo" class="metodologia-checkbox"> Modelo Iterativo</label><br>
+                <label><input type="checkbox" value="Modelo en V" class="metodologia-checkbox"> Modelo en V</label><br>
+                <label><input type="checkbox" value="Kanban" class="metodologia-checkbox"> Kanban</label><br>
+                <label><input type="checkbox" value="Scrum" class="metodologia-checkbox"> Scrum</label><br>
+                <label><input type="checkbox" value="Extreme Programming (XP)" class="metodologia-checkbox"> Extreme Programming (XP)</label><br>
+            </div>
+            <button id="comparar-btn" class="comparar-btn">Comparar</button>
+        </div>
+        
+        <div id="tabla-container" class="tabla-container" style="display: none;">
+            <h3>Tabla Comparativa</h3>
+            <table id="tabla-comparativa" class="tabla-comparativa">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th id="col-1"></th>
+                        <th id="col-2"></th>
+                        <!-- Más columnas dinámicas -->
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                    <!-- Filas generadas dinámicamente por JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Nueva sección: Encuesta de Preferencias Metodológicas -->
+    <div class="container" id="encuesta-container" style="margin-top: 60px;">
+        <h1>Encuesta de Preferencias Metodológicas</h1>
+        <p class="description">Responde las siguientes preguntas sobre tu proyecto para recibir una sugerencia personalizada sobre la metodología más adecuada.</p>
+
+        <form id="encuesta-form">
+            <div class="pregunta">
+                <label for="tamano-proyecto">1. ¿Cuál es el tamaño aproximado de tu proyecto?</label><br>
+                <select id="tamano-proyecto" name="tamano-proyecto" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="pequeno">Pequeño (menos de 3 meses)</option>
+                    <option value="mediano">Mediano (3-12 meses)</option>
+                    <option value="grande">Grande (más de 12 meses)</option>
+                </select>
+            </div>
+
+            <div class="pregunta">
+                <label for="tamano-equipo">2. ¿Cuál es el tamaño de tu equipo de desarrollo?</label><br>
+                <select id="tamano-equipo" name="tamano-equipo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="individual">Individual (1 persona)</option>
+                    <option value="pequeno">Pequeño (2-5 personas)</option>
+                    <option value="mediano">Mediano (6-15 personas)</option>
+                    <option value="grande">Grande (más de 15 personas)</option>
+                </select>
+            </div>
+
+            <div class="pregunta">
+                <label for="flexibilidad">3. ¿Qué tan flexible necesitas que sea el proceso para cambios en requisitos?</label><br>
+                <select id="flexibilidad" name="flexibilidad" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="baja">Baja (requisitos fijos y poco cambio esperado)</option>
+                    <option value="media">Media (algunos cambios posibles)</option>
+                    <option value="alta">Alta (cambios frecuentes y adaptaciones necesarias)</option>
+                </select>
+            </div>
+
+            <div class="pregunta">
+                <label for="riesgo">4. ¿Cuál es el nivel de riesgo o incertidumbre en tu proyecto?</label><br>
+                <select id="riesgo" name="riesgo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="bajo">Bajo (bien definido, bajo riesgo)</option>
+                    <option value="medio">Medio (alguna incertidumbre)</option>
+                    <option value="alto">Alto (muchas incógnitas, alta incertidumbre)</option>
+                </select>
+            </div>
+
+            <div class="pregunta">
+                <label for="involucramiento-cliente">5. ¿Qué tan involucrado estará el cliente o usuario final durante el desarrollo?</label><br>
+                <select id="involucramiento-cliente" name="involucramiento-cliente" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="bajo">Bajo (pocas interacciones)</option>
+                    <option value="medio">Medio (revisiones periódicas)</option>
+                    <option value="alto">Alto (participación continua y retroalimentación constante)</option>
+                </select>
+            </div>
+
+            <div class="pregunta">
+                <label for="plazo">6. ¿Qué tan estricto es el plazo de entrega?</label><br>
+                <select id="plazo" name="plazo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="flexible">Flexible (puede ajustarse)</option>
+                    <option value="moderado">Moderado (alguna flexibilidad)</option>
+                    <option value="estricto">Estricto (fecha fija inamovible)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="comparar-btn">Obtener Sugerencia</button>
+        </form>
+
+        <div id="resultado-encuesta" class="resultado" style="display: none; margin-top: 30px;">
+            <h3>Sugerencia de Metodología</h3>
+            <p id="sugerencia-texto"></p>
+            <button id="reiniciar-encuesta" class="comparar-btn" style="margin-top: 10px;">Hacer Otra Encuesta</button>
+        </div>
+    </div>
+
+    <script>
+        // Datos de metodologías (actualizados con nuevos criterios)
+        const metodologiasData = {
+            "Modelo Cascada": {
+                enfoquePrincipal: "Es lineal y secuencial, se completa cada fase para pasar a la siguiente.",
+                planificacionInicial: "Al principio tiene una gran planificación, ya que todo se define antes de empezar a desarrollarlo.",
+                retroalimentacionCliente: "Normalmente se genera una tardía, casi al final del proyecto.",
+                gestionCambios: "En esta metodología es muy difícil hacer cambios, ya que son muy costosos y complicados de implementar, ya que se tiene que volver a la fase anterior.",
+                entregaValor: "Se hace una entrega de valor cuando está finalizado y completado.",
+                riesgos: "Acá hay un alto riesgo si es que los requisitos o requerimientos cambian o no se entienden a la perfección desde un inicio.",
+                adecuadoPara: "Es ideal para proyectos con los requisitos bien establecidos y bien definidos (como un sistema embebido)."
+            },
+            "Modelo Incremental": {
+                enfoquePrincipal: "Desarrolla y entrega en incrementos funcionales. Cada fase agrega funcionalidad hasta que se complete el proyecto.",
+                planificacionInicial: "Se hace una planificación general al principio, pero en cambio en este modelo se ajusta conforme se avanza con el cliente.",
+                retroalimentacionCliente: "En este modelo es continuo y constante durante todo el desarrollo del mismo proyecto.",
+                gestionCambios: "Acá son más flexibles los cambios ya que se adapta fácilmente a los cambios.",
+                entregaValor: "Acá se muestra desde etapas tempranas y mediante versiones progresivas del prototipo.",
+                riesgos: "Puede aumentar el tiempo o el costo si es que hay muchas iteraciones/cambios o llegar al riesgo de “proyecto infinito”.",
+                adecuadoPara: "Para proyectos donde se requiere validar con el cliente constantemente (para un cliente con presencia en un mercado variable, como en el sector de la tecnología; en el mundo de los sistemas operativos)."
+            },
+            "Modelo por Prototipos": {
+                enfoquePrincipal: "Se crean versiones preliminares del sistema (prototipos) para validar con el cliente antes del desarrollo final.",
+                planificacionInicial: "Se planifica un prototipo inicial, pero los detalles se van afinando conforme el cliente interactúa y da retroalimentación.",
+                retroalimentacionCliente: "Muy alta, ya que el cliente prueba y opina sobre los prototipos antes del desarrollo final.",
+                gestionCambios: "Alta flexibilidad; los prototipos permiten modificar requisitos fácilmente.",
+                entregaValor: "El valor se entrega al mostrar los prototipos y recibir validaciones tempranas.",
+                riesgos: "Menor riesgo, ya que los errores y malentendidos se detectan desde los prototipos.",
+                adecuadoPara: "Ideal para proyectos con requisitos poco claros o que requieren exploración previa antes del desarrollo final."
+            },
+            "Modelo Iterativo": {
+                enfoquePrincipal: "Se trabaja en ciclos o iteraciones fijas (“timeboxing”), donde al final de cada ciclo se obtiene un incremento funcional.",
+                planificacionInicial: "Se planifica cada iteración, pero el alcance se ajusta constantemente según los resultados y feedback.",
+                retroalimentacionCliente: "Frecuente, en cada iteración se presenta un incremento funcional al cliente.",
+                gestionCambios: "Muy adaptable; los cambios se incorporan en la siguiente iteración sin afectar el proyecto completo.",
+                entregaValor: "Se entregan incrementos funcionales en cada iteración.",
+                riesgos: "Riesgo controlado, ya que los errores se detectan en cada iteración.",
+                adecuadoPara: "Ideal para proyectos donde se espera evolución continua del producto o cambios frecuentes."
+            },
+            "Modelo en V": {
+                enfoquePrincipal: "Cada fase de desarrollo tiene su fase de prueba correspondiente (verificación y validación).",
+                planificacionInicial: "Planificación detallada de cada fase y sus pruebas asociadas, enfocada en la calidad y cumplimiento de requisitos.",
+                retroalimentacionCliente: "Limitada a las etapas de prueba. Se revisa al final de cada fase de desarrollo.",
+                gestionCambios: "Baja flexibilidad; los cambios después de una fase requieren revalidar las pruebas.",
+                entregaValor: "Entrega al finalizar cada etapa validada con su fase de pruebas.",
+                riesgos: "Riesgo medio, depende del cumplimiento de las fases de verificación y validación.",
+                adecuadoPara: "Ideal para proyectos críticos donde la calidad y validación sean prioritarias (sistemas médicos, aeroespaciales, etc.)."
+            },
+            "Kanban": {
+                enfoquePrincipal: "Se basa en el flujo continuo de tareas visualizadas en un tablero. Busca optimizar el proceso eliminando bloqueos.",
+                planificacionInicial: "No requiere una planificación rígida; las tareas se priorizan de forma continua según la capacidad y necesidades del equipo.",
+                retroalimentacionCliente: "Constante, ya que se visualiza el progreso diario en el tablero y se ajustan prioridades.",
+                gestionCambios: "Muy flexible; las tareas se reordenan sin interrumpir el flujo general del trabajo.",
+                entregaValor: "Entrega continua de tareas completadas; no hay entregas fijas.",
+                riesgos: "Bajo riesgo si se controla bien el flujo de trabajo; permite detectar cuellos de botella.",
+                adecuadoPara: "Adecuado para equipos que gestionan flujos de trabajo continuos (soporte, mantenimiento, operaciones)."
+            },
+            "Scrum": {
+                enfoquePrincipal: "Divide el desarrollo en “sprints” con entregas frecuentes de valor. Fomenta la colaboración, autogestión y mejora continua.",
+                planificacionInicial: "Se planifica al inicio de cada sprint. Se revisan objetivos y tareas con base en la pila del producto.",
+                retroalimentacionCliente: "Constante: el cliente participa activamente en revisiones y retrospectivas de cada sprint.",
+                gestionCambios: "Altamente flexible; los cambios se integran al final de cada sprint con revisión constante.",
+                entregaValor: "Entregas frecuentes al final de cada sprint, siempre funcionales y utilizables.",
+                riesgos: "Riesgo bajo si se mantienen los sprints y revisiones; el equipo detecta problemas rápido.",
+                adecuadoPara: "Ideal para equipos multidisciplinarios que trabajan con entregas frecuentes y colaboración activa del cliente."
+            },
+            "Extreme Programming (XP)": {
+                enfoquePrincipal: "Promueve la mejora continua del código mediante prácticas como programación en pareja, integración continua y pruebas automatizadas.",
+                planificacionInicial: "Se planifica de forma continua, priorizando las funcionalidades más valiosas. Cambia rápido según las necesidades del cliente.",
+                retroalimentacionCliente: "Permanente: el cliente colabora directamente con los desarrolladores para ajustar el producto.",
+                gestionCambios: "Extremadamente flexible; fomenta el cambio constante mediante entregas cortas y refactorización continua.",
+                entregaValor: "Entregas constantes de versiones funcionales, con énfasis en calidad técnica.",
+                riesgos: "Riesgo bajo si se respetan las prácticas técnicas (testing, integración continua).",
+                adecuadoPara: "Adecuado para proyectos donde se prioriza la calidad del software, la mejora continua y la respuesta rápida al cambio."
+            }
+        };
+
+        // Función para generar la tabla
+        function generarTabla() {
+            const checkboxes = document.querySelectorAll('.metodologia-checkbox:checked');
+            const seleccionadas = Array.from(checkboxes).map(cb => cb.value);
+            
+            if (seleccionadas.length < 2) {
+                alert("Selecciona al menos dos metodologías para comparar.");
+                return;
+            }
+            
+            const tablaHead = document.getElementById('tabla-comparativa').querySelector('thead tr');
+            const tablaBody = document.getElementById('tabla-body');
+            
+            // Limpiar columnas dinámicas
+            tablaHead.innerHTML = '<th>Característica</th>';
+            seleccionadas.forEach(met => {
+                const th = document.createElement('th');
+                th.textContent = met;
+                tablaHead.appendChild(th);
+            });
+            
+            // Limpiar cuerpo de tabla
+            tablaBody.innerHTML = '';
+            
+            // Agregar filas para cada característica
+            const caracteristicas = ['enfoquePrincipal', 'planificacionInicial', 'retroalimentacionCliente', 'gestionCambios', 'entregaValor', 'riesgos', 'adecuadoPara'];
+            caracteristicas.forEach(car => {
+                const row = document.createElement('tr');
+                const tdCar = document.createElement('td');
+                tdCar.textContent = car.charAt(0).toUpperCase() + car.slice(1).replace(/([A-Z])/g, ' $1'); // Capitalizar y agregar espacios
+                row.appendChild(tdCar);
+                
+                seleccionadas.forEach(met => {
+                    const td = document.createElement('td');
+                    td.textContent = metodologiasData[met][car] || 'N/A';
+                    row.appendChild(td);
+                });
+                
+                tablaBody.appendChild(row);
+            });
+            
+            // Mostrar la tabla
+            document.getElementById('tabla-container').style.display = 'block';
+        }
+
+        // Event listener para el botón
+        document.getElementById('comparar-btn').addEventListener('click', generarTabla);
+
+        // Lógica para la encuesta de sugerencias
+        const form = document.getElementById('encuesta-form');
+        const resultadoDiv = document.getElementById('resultado-encuesta');
+        const sugerenciaTexto = document.getElementById('sugerencia-texto');
+        const reiniciarBtn = document.getElementById('reiniciar-encuesta');
+
+        // Función para sugerir metodología basada en respuestas
+        function sugerirMetodologia(respuestas) {
+            let scores = {
+                "Waterfall": 0,
+                "Scrum": 0,
+                "Kanban": 0,
+                "XP": 0,
+                "Lean": 0
+            };
+
+            // Lógica de puntuación basada en respuestas (puedes ajustar según criterios)
+            if (respuestas['tamano-proyecto'] === 'grande' && respuestas['riesgo'] === 'bajo' && respuestas['flexibilidad'] === 'baja') {
+                scores["Waterfall"] += 3;
+            }
+            if (respuestas['tamano-equipo'] === 'mediano' && respuestas['flexibilidad'] === 'alta' && respuestas['involucramiento-cliente'] === 'alto') {
+                scores["Scrum"] += 3;
+            }
+            if (respuestas['tamano-equipo'] === 'pequeno' && respuestas['flexibilidad'] === 'alta' && respuestas['riesgo'] === 'medio') {
+                scores["Kanban"] += 3;
+            }
+            if (respuestas['tamano-equipo'] === 'pequeno' && respuestas['riesgo'] === 'alto' && respuestas['involucramiento-cliente'] === 'alto') {
+                scores["XP"] += 3;
+            }
+            if (respuestas['tamano-proyecto'] === 'mediano' && respuestas['plazo'] === 'moderado' && respuestas['riesgo'] === 'medio') {
+                scores["Lean"] += 3;
+            }
+
+            // Agregar puntos adicionales basados en otras respuestas
+            if (respuestas['flexibilidad'] === 'alta') {
+                scores["Scrum"] += 1;
+                scores["Kanban"] += 1;
+            }
+            if (respuestas['riesgo'] === 'alto') {
+                scores["XP"] += 1;
+            }
+            if (respuestas['tamano-proyecto'] === 'pequeno') {
+                scores["Kanban"] += 1;
+            }
+            if (respuestas['involucramiento-cliente'] === 'bajo') {
+                scores["Waterfall"] += 1;
+            }
+
+            // Encontrar la metodología con mayor puntuación
+            const sugerencia = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            return sugerencia;
+        }
+
+        // Manejar envío del formulario
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const respuestas = {};
+            formData.forEach((value, key) => {
+                respuestas[key] = value;
+            });
+
+            const sugerencia = sugerirMetodologia(respuestas);
+            sugerenciaTexto.textContent = `Basado en tus respuestas, te sugerimos usar **${sugerencia}**. Esta metodología se adapta bien a proyectos con características similares a las que describiste. Consulta la sección del comparador arriba para más detalles sobre ${sugerencia}.`;
+            resultadoDiv.style.display = 'block';
+        });
+
+        // Manejar reinicio de encuesta
+        reiniciarBtn.addEventListener('click', function() {
+            form.reset();
+            resultadoDiv.style.display = 'none';
+            actualizarEstadoBoton(); // Actualizar botón al reiniciar
+        });
+
+        // Función para actualizar el estado del botón de envío
+        function actualizarEstadoBoton() {
+            const selects = form.querySelectorAll('select');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            let allSelected = true;
+
+            selects.forEach(select => {
+                if (select.value === '') {
+                    allSelected = false;
+                }
+                // Agregar feedback visual
+                if (select.value !== '') {
+                    select.style.borderColor = '#81c15a'; // Verde si seleccionado
+                } else {
+                    select.style.borderColor = '#ccc'; // Gris por defecto
+                }
+            });
+
+            if (allSelected) {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = 'pointer';
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.5';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        // Agregar event listeners a los selects para actualizar el botón en tiempo real
+        const selects = form.querySelectorAll('select');
+        selects.forEach(select => {
+            select.addEventListener('change', actualizarEstadoBoton);
+        });
+
+        // Inicializar el estado del botón al cargar la página
+        actualizarEstadoBoton();
+    </script>
+</body>
+</html>
